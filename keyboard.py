@@ -37,10 +37,9 @@ class Keyboard(Thread):
             auth_required=False,
         )
 
-        iface.set_public(True)
-
         with iface:
             iface.configure()
+            iface.set_public(True)
             addr = iface.get_address()
 
             with create_socket() as ctl_sock, create_socket() as int_sock:
