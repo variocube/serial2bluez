@@ -37,6 +37,8 @@ class Keyboard(Thread):
             auth_required=False,
         )
 
+        iface.set_public(True)
+
         with iface:
             iface.configure()
             addr = iface.get_address()
